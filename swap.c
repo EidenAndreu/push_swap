@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereinald <ereinald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 20:25:56 by ereinald          #+#    #+#             */
-/*   Updated: 2023/08/28 21:57:02 by ereinald         ###   ########.fr       */
+/*   Created: 2023/08/28 21:57:35 by ereinald          #+#    #+#             */
+/*   Updated: 2023/08/28 21:58:27 by ereinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_push(t_stack *stack, int item)
+void ft_swap(t_stack *stack)
 {
-    if (is_full(stack))
+    int tmp;
+
+    if (stack->top < 1)
         return ;
-    stack->array[++stack->top] = item;
+    tmp = stack->array[stack->top];
+    stack->array[stack->top] = stack->array[stack->top - 1];
+    stack->array[stack->top - 1] = tmp;
 }
 
-void ft_push_a(t_stack *a, t_stack *b)
+void ft_swap_a(t_stack *a)
 {
-    if (is_empty(b))
-        return ;
-    ft_push(a, ft_pop(b));
-    ft_putendl_fd("pa", 1);
+    ft_swap(a);
+    ft_putendl_fd("sa", 1);
 }
 
-void ft_push_b(t_stack *a, t_stack *b)
+void ft_swap_b(t_stack *b)
 {
-    if (is_empty(a))
-        return ;
-    ft_push(b, ft_pop(a));
-    ft_putendl_fd("pb", 1);
+    ft_swap(b);
+    ft_putendl_fd("sb", 1);
+}
+
+void ft_swap_ab(t_stack *a, t_stack *b)
+{
+    ft_swap(a);
+    ft_swap(b);
+    ft_putendl_fd("ss", 1);
 }
