@@ -6,7 +6,7 @@
 /*   By: ereinald <ereinald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:16:46 by ereinald          #+#    #+#             */
-/*   Updated: 2023/09/03 21:07:04 by ereinald         ###   ########.fr       */
+/*   Updated: 2023/09/03 21:34:58 by ereinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct
     int cost_target;
     int target;
     int position;
-    int target;
     int index;
     struct t_stack *next;
 } t_stack;
@@ -71,5 +70,8 @@ void        ft_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
 
 int         ft_min_index_position(t_stack **stack);
 void        ft_get_target_position(t_stack **stack_a, t_stack **stack_b);
+
+void        ft_sort_three(t_stack **stack_a);
+void        ft_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif
