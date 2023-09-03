@@ -6,7 +6,7 @@
 /*   By: ereinald <ereinald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 20:40:12 by ereinald          #+#    #+#             */
-/*   Updated: 2023/09/03 12:41:37 by ereinald         ###   ########.fr       */
+/*   Updated: 2023/09/03 20:57:25 by ereinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	ft_rb(t_stack **b, int *cost)
 	}
 }
 
-void	ft_do_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
+void	ft_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
 {
 	if (cost_a < 0 && cost_b < 0)
 		ft_reverse_both(a, b, &cost_a, &cost_b);

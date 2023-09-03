@@ -6,7 +6,7 @@
 /*   By: ereinald <ereinald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:16:46 by ereinald          #+#    #+#             */
-/*   Updated: 2023/08/31 20:42:31 by ereinald         ###   ########.fr       */
+/*   Updated: 2023/09/03 20:57:52 by ereinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,12 @@ void        ft_reverse_rotate_ab(t_stack *a, t_stack *b);
 
 void        ft_calculate_cost(t_stack *stack);
 void        ft_cheapest_move(t_stack **stack_a, t_stack **stack_b);
+
+static void ft_rotate_all(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+static void ft_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+static void ft_ra(t_stack **a, int *cost);
+static void ft_rb(t_stack **b, int *cost);
+void        ft_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
+
+
 #endif
