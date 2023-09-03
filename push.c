@@ -6,7 +6,7 @@
 /*   By: ereinald <ereinald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:25:56 by ereinald          #+#    #+#             */
-/*   Updated: 2023/08/28 21:57:02 by ereinald         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:30:24 by ereinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void ft_push(t_stack *stack, int item)
 {
-    if (is_full(stack))
+    if (ft_is_full(stack))
         return ;
     stack->array[++stack->top] = item;
 }
 
 void ft_push_a(t_stack *a, t_stack *b)
 {
-    if (is_empty(b))
+    if (ft_is_empty(b))
         return ;
     ft_push(a, ft_pop(b));
     ft_putendl_fd("pa", 1);
@@ -29,7 +29,7 @@ void ft_push_a(t_stack *a, t_stack *b)
 
 void ft_push_b(t_stack *a, t_stack *b)
 {
-    if (is_empty(a))
+    if (ft_is_empty(a))
         return ;
     ft_push(b, ft_pop(a));
     ft_putendl_fd("pb", 1);

@@ -6,7 +6,7 @@
 /*   By: ereinald <ereinald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:26:29 by ereinald          #+#    #+#             */
-/*   Updated: 2023/08/28 21:22:05 by ereinald         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:30:04 by ereinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_stack *ft_clone_stack(t_stack *stack)
     int i;
 
     i = 0;
-    clone = create_stack(stack->capacity);
+    clone = ft_create_stack(stack->capacity);
     while (i <= stack->top)
     {
         clone->array[i] = stack->array[i];

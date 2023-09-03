@@ -6,7 +6,7 @@
 /*   By: ereinald <ereinald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:16:46 by ereinald          #+#    #+#             */
-/*   Updated: 2023/08/28 22:01:12 by ereinald         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:42:31 by ereinald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,17 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct
 {
     int *array;
     int capacity;
     int top;
+    int cost_position;
+    int cost_target;
+    int target;
+    struct t_stack *next;
 } t_stack;
 
 t_stack     *ft_create_stack(int capacity);
@@ -56,4 +61,6 @@ void        ft_reverse_rotate_a(t_stack *a);
 void        ft_reverse_rotate_b(t_stack *b);
 void        ft_reverse_rotate_ab(t_stack *a, t_stack *b);
 
+void        ft_calculate_cost(t_stack *stack);
+void        ft_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 #endif
